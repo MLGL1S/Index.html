@@ -1,0 +1,101 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  color: white;
+  background: linear-gradient(135deg, #3a0ca3, #7209b7, #560bad);
+  overflow: hidden;
+}
+
+/* ЗАГРУЗКА */
+#loader {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: fadeOut 1s ease forwards;
+  animation-delay: 2s;
+  z-index: 1000;
+}
+.loader-circle {
+  width: 60px;
+  height: 60px;
+  border: 5px solid rgba(255,255,255,0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes fadeOut {
+  to { opacity: 0; visibility: hidden; }
+}
+
+/* ВХОД */
+#login-screen {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#login-screen h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+#login-btn {
+  background: white;
+  color: #7209b7;
+  padding: 15px 40px;
+  border-radius: 30px;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(255,255,255,0.6);
+  transition: 0.3s;
+}
+#login-btn:hover {
+  transform: scale(1.05);
+}
+
+/* ПРИЛОЖЕНИЕ */
+#app {
+  display: none;
+  height: 100vh;
+  padding-bottom: 70px;
+}
+.page {
+  display: none;
+  padding: 20px;
+}
+
+/* НАВИГАЦИЯ */
+#nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 65px;
+  background: rgba(0,0,0,0.2);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.nav-btn {
+  text-align: center;
+  flex: 1;
+  cursor: pointer;
+  font-size: 14px;
+}
+.nav-btn.active {
+  color: #ffb3ff;
+  font-weight: bold;
+}
